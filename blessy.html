@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index Table with Editable Fields</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: darkgreen;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: darkgreen;
+      color: white;
+    }
+
+    input[type="text"] {
+      width: 95%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      visibility:visible;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Index Table (50 Rows)</h1>
+
+  <table id="indexTable">
+    <thead>
+      <tr>
+        <th>Serial No.</th>
+        <th>Topic</th>
+        <th>Signature</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be added by JavaScript -->
+    </tbody>
+  </table>
+
+  <script>
+    const tbody = document.querySelector("#indexTable tbody");
+
+    for (let i = 1; i <= 50; i++) {
+      const row = document.createElement("tr");
+
+      const serialCell = document.createElement("td");
+      serialCell.textContent = i;
+
+      const topicCell = document.createElement("td");
+      const topicInput = document.createElement("input");
+      topicInput.type = "text";
+      topicInput.placeholder = "";
+      topicCell.appendChild(topicInput);
+
+      const signatureCell = document.createElement("td");
+      const signatureInput = document.createElement("input");
+      signatureInput.type = "text";
+      signatureInput.placeholder = "";
+      signatureCell.appendChild(signatureInput);
+
+      row.appendChild(serialCell);
+      row.appendChild(topicCell);
+      row.appendChild(signatureCell);
+
+      tbody.appendChild(row);
+    }
+  </script>
+
+</body>
+</html>

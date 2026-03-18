@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number to Letters</title>
+</head>
+<body>
+  <h3>Convert Number into Words</h3>
+
+  <input type="text" id="numInput" placeholder="Enter a number">
+  <button onclick="convertNumber()">Convert</button>
+
+  <p id="result"></p>
+
+  <script>
+    function convertNumber() {
+      let num = document.getElementById("numInput").value;
+      let words = "";
+
+      for (let i = 0; i < num.length; i++) 
+      {
+        let digit = num[i];
+
+        switch(digit) {
+          case "0": 
+          words += "zero ";
+          break;
+          case "1": 
+          words += "one ";
+           break;
+          case "2": 
+          words += "two ";
+           break;
+          case "3": 
+          words += "three "; 
+          break;
+          case "4":
+             words += "four "; 
+             break;
+          case "5": 
+             words += "five ";
+              break;
+          case "6": words += "six "; break;
+          case "7": words += "seven "; break;
+          case "8": words += "eight "; break;
+          case "9": words += "nine "; break;
+          default: words += "? "; // handles non-digit input
+        }
+      }
+
+      document.getElementById("result").innerText = words.trim();
+    }
+  </script>
+</body>
+</html>
